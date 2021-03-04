@@ -28,3 +28,15 @@ phpunit.xml.dist add:
 After local db configuration, get schema:  
 `php bin/console doctrine:database:create -e test --no-interaction`  
 `php bin/console doctrine:migrations:migrate -e test --no-interaction`
+
+
+# ENDPONTS
+Single beer information:  
+GET **/api/beer/{id}**
+  
+Paginated list of beers with filtering by brewer (by his ID), name, price (from / to), country and type:  
+GET **/api/beer/pages/{page}/limits/{limit}**  
+Possible filter keys: `brewerIds`, `name`, `priceFrom`, `priceTo`, `country`, `type`  
+
+List of brewers with informations about id, brewer name and number of beers assigned:  
+GET **/api/brewers**  
